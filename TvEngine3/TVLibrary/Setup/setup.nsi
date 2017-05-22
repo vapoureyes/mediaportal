@@ -116,16 +116,24 @@ Var frominstall
 !include Memento.nsh
 
 !include "${git_InstallScripts}\include\FileAssociation.nsh"
+
 !include "${git_InstallScripts}\include\LanguageMacros.nsh"
+
 !include "${git_InstallScripts}\include\LoggingMacros.nsh"
+
 !include "${git_InstallScripts}\include\MediaPortalDirectories.nsh"
+
 !include "${git_InstallScripts}\include\MediaPortalMacros.nsh"
+
 !include "${git_InstallScripts}\include\ProcessMacros.nsh"
+
 !include "${git_InstallScripts}\include\WinVerEx.nsh"
 
 !include "${git_InstallScripts}\pages\AddRemovePage.nsh"
+
 !include "${git_InstallScripts}\pages\UninstallModePage.nsh"
 
+!include "${git_InstallScripts}\include\x64.nsh"
 
 #---------------------------------------------------------------------------
 # INSTALLER INTERFACE settings
@@ -550,9 +558,13 @@ ${MementoSection} "MediaPortal TV Server" SecServer
   File "${git_ROOT}\Packages\MediaInfo.0.7.69\MediaInfo.dll"
 
   ; thumbnail software
-  File "${git_ROOT}\Packages\ffmpeg.2.7.1\ffmpeg.exe"
+  ${If} ${RunningX64}
+    File "${git_ROOT}\Packages\FFMPEG.Mixed.3.2.4\content\x64\ffmpeg.exe"
+  ${Else}
+    File "${git_ROOT}\Packages\FFMPEG.Mixed.3.2.4\content\x86\ffmpeg.exe"
+  ${EndIf} 
+
   File "${git_TVServer}\TvThumbnails\bin\${BUILD_TYPE}\TvThumbnails.dll"
-  
 
   ; protocol implementations for MPIPTVSource.ax
   File "${git_DirectShowFilters}\MPIPTVSource\bin\${BUILD_TYPE}\MPIPTV_FILE.dll"
