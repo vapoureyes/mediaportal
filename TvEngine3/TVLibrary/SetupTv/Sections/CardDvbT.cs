@@ -542,6 +542,9 @@ namespace SetupTv.Sections
               //add new channel
               exists = false;
               dbChannel = layer.AddNewChannel(channel.Name, channel.LogicalChannelNumber);
+
+              dbChannel.signalQuality = Math.Abs(RemoteControl.Instance.SignalQuality(_cardNumber));
+
               dbChannel.SortOrder = 10000;
               if (channel.LogicalChannelNumber >= 1)
               {
@@ -554,8 +557,35 @@ namespace SetupTv.Sections
             else
             {
               exists = true;
-              dbChannel = currentDetail.ReferencedChannel();
-            }
+              dbChannel = null;
+
+              //int level = RemoteControl.Instance.SignalLevel(_cardNumber);
+              //progressBarLevel.Value = Math.Abs(level);
+
+              int quality = Math.Abs(RemoteControl.Instance.SignalQuality(_cardNumber));
+              progressBarQuality.Value = quality;
+
+              if (1 == 1)
+              {
+                // Stronger channel selection...
+                if (Math.Abs(RemoteControl.Instance.SignalQuality(_cardNumber)) > layer.GetChannel(currentDetail.IdChannel).signalQuality)
+                {
+                  // add new strong channel
+                  dbChannel.signalQuality = quality;
+                  dbChannel = layer.AddNewChannel(channel.Name, channel.LogicalChannelNumber);
+                }
+                else
+                {
+                  // use existing channel
+                  dbChannel = currentDetail.ReferencedChannel();
+                }
+              }
+              else // Old Default Path - take current detail
+              {
+                exists = true;
+                dbChannel = currentDetail.ReferencedChannel();
+              }
+            }           
 
             if (dbChannel.IsTv)
             {
