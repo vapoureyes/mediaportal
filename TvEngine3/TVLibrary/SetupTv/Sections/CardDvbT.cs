@@ -31,6 +31,7 @@ using DirectShowLib.BDA;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Xml;
+using TvService;
 
 namespace SetupTv.Sections
 {
@@ -559,8 +560,8 @@ namespace SetupTv.Sections
               exists = true;
               dbChannel = null;
 
-              //int level = RemoteControl.Instance.SignalLevel(_cardNumber);
-              //progressBarLevel.Value = Math.Abs(level);
+              int level = RemoteControl.Instance.SignalLevel(_cardNumber);
+              progressBarLevel.Value = Math.Abs(level);
 
               int quality = Math.Abs(RemoteControl.Instance.SignalQuality(_cardNumber));
               progressBarQuality.Value = quality;
