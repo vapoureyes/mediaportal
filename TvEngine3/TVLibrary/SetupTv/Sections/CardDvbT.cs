@@ -588,6 +588,7 @@ namespace SetupTv.Sections
               {
                 exists = true;
                 dbChannel = currentDetail.ReferencedChannel();
+                competativelyDisplaced = false;
               }
             }
 
@@ -763,6 +764,7 @@ namespace SetupTv.Sections
         checkBoxCreateGroups.Enabled = !_isScanning;
         checkBoxCreateSignalGroup.Enabled = !_isScanning;
         checkBoxEnableChannelMoveDetection.Enabled = !_isScanning;
+        checkBoxEnableStrongestChannelSelection.Enabled = !_isScanning;
         checkBoxAdvancedTuning.Enabled = !_isScanning;
       }
 
