@@ -30,6 +30,7 @@ namespace SetupTv.Sections
     {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageScan = new System.Windows.Forms.TabPage();
+            this.checkBoxEnableStrongestChannelSelection = new System.Windows.Forms.CheckBox();
             this.checkBoxEnableChannelMoveDetection = new System.Windows.Forms.CheckBox();
             this.checkBoxCreateSignalGroup = new System.Windows.Forms.CheckBox();
             this.checkBoxAdvancedTuning = new System.Windows.Forms.CheckBox();
@@ -60,7 +61,6 @@ namespace SetupTv.Sections
             this.mpComboBoxRegion = new MediaPortal.UserInterface.Controls.MPComboBox();
             this.mpComboBoxCountry = new MediaPortal.UserInterface.Controls.MPComboBox();
             this.tabPageCIMenu = new System.Windows.Forms.TabPage();
-            this.checkBoxEnableStrongestChannelSelection = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPageScan.SuspendLayout();
             this.mpGrpAdvancedTuning.SuspendLayout();
@@ -76,7 +76,7 @@ namespace SetupTv.Sections
             this.tabControl1.Controls.Add(this.tabPageScan);
             this.tabControl1.Controls.Add(this.tabPageCIMenu);
             this.tabControl1.Location = new System.Drawing.Point(5, 5);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(744, 533);
@@ -98,18 +98,29 @@ namespace SetupTv.Sections
             this.tabPageScan.Controls.Add(this.mpComboBoxRegion);
             this.tabPageScan.Controls.Add(this.mpComboBoxCountry);
             this.tabPageScan.Location = new System.Drawing.Point(4, 25);
-            this.tabPageScan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageScan.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageScan.Name = "tabPageScan";
-            this.tabPageScan.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageScan.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageScan.Size = new System.Drawing.Size(736, 504);
             this.tabPageScan.TabIndex = 0;
             this.tabPageScan.Text = "Scanning";
+            // 
+            // checkBoxEnableStrongestChannelSelection
+            // 
+            this.checkBoxEnableStrongestChannelSelection.AutoSize = true;
+            this.checkBoxEnableStrongestChannelSelection.Location = new System.Drawing.Point(293, 105);
+            this.checkBoxEnableStrongestChannelSelection.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxEnableStrongestChannelSelection.Name = "checkBoxEnableStrongestChannelSelection";
+            this.checkBoxEnableStrongestChannelSelection.Size = new System.Drawing.Size(251, 21);
+            this.checkBoxEnableStrongestChannelSelection.TabIndex = 28;
+            this.checkBoxEnableStrongestChannelSelection.Text = "Enable strongest channel selection";
+            this.checkBoxEnableStrongestChannelSelection.UseVisualStyleBackColor = true;
             // 
             // checkBoxEnableChannelMoveDetection
             // 
             this.checkBoxEnableChannelMoveDetection.AutoSize = true;
             this.checkBoxEnableChannelMoveDetection.Location = new System.Drawing.Point(17, 105);
-            this.checkBoxEnableChannelMoveDetection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxEnableChannelMoveDetection.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxEnableChannelMoveDetection.Name = "checkBoxEnableChannelMoveDetection";
             this.checkBoxEnableChannelMoveDetection.Size = new System.Drawing.Size(259, 21);
             this.checkBoxEnableChannelMoveDetection.TabIndex = 6;
@@ -120,7 +131,7 @@ namespace SetupTv.Sections
             // 
             this.checkBoxCreateSignalGroup.AutoSize = true;
             this.checkBoxCreateSignalGroup.Location = new System.Drawing.Point(293, 76);
-            this.checkBoxCreateSignalGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxCreateSignalGroup.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxCreateSignalGroup.Name = "checkBoxCreateSignalGroup";
             this.checkBoxCreateSignalGroup.Size = new System.Drawing.Size(235, 21);
             this.checkBoxCreateSignalGroup.TabIndex = 5;
@@ -132,7 +143,7 @@ namespace SetupTv.Sections
             // 
             this.checkBoxAdvancedTuning.AutoSize = true;
             this.checkBoxAdvancedTuning.Location = new System.Drawing.Point(17, 133);
-            this.checkBoxAdvancedTuning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxAdvancedTuning.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxAdvancedTuning.Name = "checkBoxAdvancedTuning";
             this.checkBoxAdvancedTuning.Size = new System.Drawing.Size(214, 21);
             this.checkBoxAdvancedTuning.TabIndex = 7;
@@ -154,9 +165,9 @@ namespace SetupTv.Sections
             this.mpGrpAdvancedTuning.Controls.Add(this.mpLabel4);
             this.mpGrpAdvancedTuning.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.mpGrpAdvancedTuning.Location = new System.Drawing.Point(3, 316);
-            this.mpGrpAdvancedTuning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mpGrpAdvancedTuning.Margin = new System.Windows.Forms.Padding(4);
             this.mpGrpAdvancedTuning.Name = "mpGrpAdvancedTuning";
-            this.mpGrpAdvancedTuning.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mpGrpAdvancedTuning.Padding = new System.Windows.Forms.Padding(4);
             this.mpGrpAdvancedTuning.Size = new System.Drawing.Size(723, 151);
             this.mpGrpAdvancedTuning.TabIndex = 8;
             this.mpGrpAdvancedTuning.TabStop = false;
@@ -189,9 +200,9 @@ namespace SetupTv.Sections
             this.groupBox2.Controls.Add(this.scanSingleTransponder);
             this.groupBox2.Controls.Add(this.scanPredefProvider);
             this.groupBox2.Location = new System.Drawing.Point(356, 20);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(232, 110);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
@@ -201,7 +212,7 @@ namespace SetupTv.Sections
             // 
             this.scanNIT.AutoSize = true;
             this.scanNIT.Location = new System.Drawing.Point(9, 76);
-            this.scanNIT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scanNIT.Margin = new System.Windows.Forms.Padding(4);
             this.scanNIT.Name = "scanNIT";
             this.scanNIT.Size = new System.Drawing.Size(195, 21);
             this.scanNIT.TabIndex = 18;
@@ -213,7 +224,7 @@ namespace SetupTv.Sections
             // 
             this.scanSingleTransponder.AutoSize = true;
             this.scanSingleTransponder.Location = new System.Drawing.Point(9, 48);
-            this.scanSingleTransponder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scanSingleTransponder.Margin = new System.Windows.Forms.Padding(4);
             this.scanSingleTransponder.Name = "scanSingleTransponder";
             this.scanSingleTransponder.Size = new System.Drawing.Size(147, 21);
             this.scanSingleTransponder.TabIndex = 17;
@@ -226,7 +237,7 @@ namespace SetupTv.Sections
             this.scanPredefProvider.AutoSize = true;
             this.scanPredefProvider.Checked = true;
             this.scanPredefProvider.Location = new System.Drawing.Point(9, 20);
-            this.scanPredefProvider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scanPredefProvider.Margin = new System.Windows.Forms.Padding(4);
             this.scanPredefProvider.Name = "scanPredefProvider";
             this.scanPredefProvider.Size = new System.Drawing.Size(153, 21);
             this.scanPredefProvider.TabIndex = 16;
@@ -248,7 +259,7 @@ namespace SetupTv.Sections
             // textBoxFreq
             // 
             this.textBoxFreq.Location = new System.Drawing.Point(131, 34);
-            this.textBoxFreq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFreq.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFreq.MaxLength = 6;
             this.textBoxFreq.Name = "textBoxFreq";
             this.textBoxFreq.Size = new System.Drawing.Size(65, 22);
@@ -258,7 +269,7 @@ namespace SetupTv.Sections
             // textBoxBandwidth
             // 
             this.textBoxBandwidth.Location = new System.Drawing.Point(131, 63);
-            this.textBoxBandwidth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxBandwidth.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBandwidth.MaxLength = 2;
             this.textBoxBandwidth.Name = "textBoxBandwidth";
             this.textBoxBandwidth.Size = new System.Drawing.Size(65, 22);
@@ -289,9 +300,9 @@ namespace SetupTv.Sections
             this.mpGrpScanProgress.Controls.Add(this.listViewStatus);
             this.mpGrpScanProgress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.mpGrpScanProgress.Location = new System.Drawing.Point(3, 161);
-            this.mpGrpScanProgress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mpGrpScanProgress.Margin = new System.Windows.Forms.Padding(4);
             this.mpGrpScanProgress.Name = "mpGrpScanProgress";
-            this.mpGrpScanProgress.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mpGrpScanProgress.Padding = new System.Windows.Forms.Padding(4);
             this.mpGrpScanProgress.Size = new System.Drawing.Size(727, 332);
             this.mpGrpScanProgress.TabIndex = 19;
             this.mpGrpScanProgress.TabStop = false;
@@ -313,7 +324,7 @@ namespace SetupTv.Sections
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(16, 114);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(707, 12);
             this.progressBar1.TabIndex = 25;
@@ -343,7 +354,7 @@ namespace SetupTv.Sections
             this.progressBarLevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarLevel.Location = new System.Drawing.Point(131, 57);
-            this.progressBarLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBarLevel.Margin = new System.Windows.Forms.Padding(4);
             this.progressBarLevel.Name = "progressBarLevel";
             this.progressBarLevel.Size = new System.Drawing.Size(592, 12);
             this.progressBarLevel.TabIndex = 22;
@@ -353,7 +364,7 @@ namespace SetupTv.Sections
             this.progressBarQuality.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarQuality.Location = new System.Drawing.Point(131, 85);
-            this.progressBarQuality.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBarQuality.Margin = new System.Windows.Forms.Padding(4);
             this.progressBarQuality.Name = "progressBarQuality";
             this.progressBarQuality.Size = new System.Drawing.Size(592, 12);
             this.progressBarQuality.TabIndex = 24;
@@ -367,7 +378,7 @@ namespace SetupTv.Sections
             this.columnHeader1});
             this.listViewStatus.HideSelection = false;
             this.listViewStatus.Location = new System.Drawing.Point(1, 134);
-            this.listViewStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewStatus.Margin = new System.Windows.Forms.Padding(4);
             this.listViewStatus.Name = "listViewStatus";
             this.listViewStatus.Size = new System.Drawing.Size(720, 190);
             this.listViewStatus.TabIndex = 26;
@@ -383,7 +394,7 @@ namespace SetupTv.Sections
             // 
             this.checkBoxCreateGroups.AutoSize = true;
             this.checkBoxCreateGroups.Location = new System.Drawing.Point(17, 76);
-            this.checkBoxCreateGroups.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxCreateGroups.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxCreateGroups.Name = "checkBoxCreateGroups";
             this.checkBoxCreateGroups.Size = new System.Drawing.Size(232, 21);
             this.checkBoxCreateGroups.TabIndex = 4;
@@ -393,7 +404,7 @@ namespace SetupTv.Sections
             // mpButtonScanTv
             // 
             this.mpButtonScanTv.Location = new System.Drawing.Point(448, 34);
-            this.mpButtonScanTv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mpButtonScanTv.Margin = new System.Windows.Forms.Padding(4);
             this.mpButtonScanTv.Name = "mpButtonScanTv";
             this.mpButtonScanTv.Size = new System.Drawing.Size(143, 28);
             this.mpButtonScanTv.TabIndex = 27;
@@ -426,7 +437,7 @@ namespace SetupTv.Sections
             this.mpComboBoxRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mpComboBoxRegion.FormattingEnabled = true;
             this.mpComboBoxRegion.Location = new System.Drawing.Point(133, 37);
-            this.mpComboBoxRegion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mpComboBoxRegion.Margin = new System.Windows.Forms.Padding(4);
             this.mpComboBoxRegion.Name = "mpComboBoxRegion";
             this.mpComboBoxRegion.Size = new System.Drawing.Size(297, 24);
             this.mpComboBoxRegion.TabIndex = 3;
@@ -436,7 +447,7 @@ namespace SetupTv.Sections
             this.mpComboBoxCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mpComboBoxCountry.FormattingEnabled = true;
             this.mpComboBoxCountry.Location = new System.Drawing.Point(133, 4);
-            this.mpComboBoxCountry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mpComboBoxCountry.Margin = new System.Windows.Forms.Padding(4);
             this.mpComboBoxCountry.Name = "mpComboBoxCountry";
             this.mpComboBoxCountry.Size = new System.Drawing.Size(297, 24);
             this.mpComboBoxCountry.TabIndex = 1;
@@ -445,30 +456,19 @@ namespace SetupTv.Sections
             // 
             this.tabPageCIMenu.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageCIMenu.Location = new System.Drawing.Point(4, 25);
-            this.tabPageCIMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageCIMenu.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageCIMenu.Name = "tabPageCIMenu";
-            this.tabPageCIMenu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageCIMenu.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageCIMenu.Size = new System.Drawing.Size(736, 504);
             this.tabPageCIMenu.TabIndex = 1;
             this.tabPageCIMenu.Text = "CI Menu";
-            // 
-            // checkBoxEnableStrongestChannelSelection
-            // 
-            this.checkBoxEnableStrongestChannelSelection.AutoSize = true;
-            this.checkBoxEnableStrongestChannelSelection.Location = new System.Drawing.Point(293, 105);
-            this.checkBoxEnableStrongestChannelSelection.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxEnableStrongestChannelSelection.Name = "checkBoxEnableStrongestChannelSelection";
-            this.checkBoxEnableStrongestChannelSelection.Size = new System.Drawing.Size(255, 21);
-            this.checkBoxEnableStrongestChannelSelection.TabIndex = 28;
-            this.checkBoxEnableStrongestChannelSelection.Text = "Enable Strongest Channel selection";
-            this.checkBoxEnableStrongestChannelSelection.UseVisualStyleBackColor = true;
             // 
             // CardDvbT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CardDvbT";
             this.Size = new System.Drawing.Size(753, 543);
             this.tabControl1.ResumeLayout(false);
