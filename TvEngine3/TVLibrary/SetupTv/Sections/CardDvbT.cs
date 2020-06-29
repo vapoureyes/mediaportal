@@ -644,18 +644,15 @@ namespace SetupTv.Sections
             }
             if (channel.IsRadio)
             {
-              if (!competativelyDisplaced)
-              {
                 if (exists)
                 {
-                  radio.updChannel++;
+                    radio.updChannel++;
                 }
                 else
                 {
-                  radio.newChannel++;
-                  radio.newChannels.Add(channel);
+                    radio.newChannel++;
+                    radio.newChannels.Add(channel);
                 }
-              }
             }
             layer.MapChannelToCard(card, dbChannel, false);
             line = String.Format("{0}tp- {1} {2}:New TV/Radio:{3}/{4} Updated TV/Radio:{5}/{6}", 1 + index,
