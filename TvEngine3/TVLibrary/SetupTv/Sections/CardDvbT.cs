@@ -517,7 +517,8 @@ namespace SetupTv.Sections
           {
             Channel dbChannel;
             DVBTChannel channel = (DVBTChannel)channels[i];
-            bool exists;
+            bool exists = false;
+            bool competativelyDisplaced = false;
             TuningDetail currentDetail;
             //Check if we already have this tuningdetail. The user has the option to enable channel move detection...
             if (checkBoxEnableChannelMoveDetection.Checked)
@@ -542,7 +543,6 @@ namespace SetupTv.Sections
               //add new channel
               exists = false;
               dbChannel = layer.AddNewChannel(channel.Name, channel.LogicalChannelNumber);
-
               dbChannel.signalQuality = Math.Abs(RemoteControl.Instance.SignalQuality(_cardNumber));
 
               dbChannel.SortOrder = 10000;
@@ -559,25 +559,29 @@ namespace SetupTv.Sections
               exists = true;
               dbChannel = null;
 
-              //int level = RemoteControl.Instance.SignalLevel(_cardNumber);
-              //progressBarLevel.Value = Math.Abs(level);
+              int level = RemoteControl.Instance.SignalLevel(_cardNumber);
+              progressBarLevel.Value = Math.Abs(level);
 
               int quality = Math.Abs(RemoteControl.Instance.SignalQuality(_cardNumber));
               progressBarQuality.Value = quality;
 
-              if (1 == 1)
+              if (checkBoxEnableStrongestChannelSelection.Checked)
               {
                 // Stronger channel selection...
-                if (Math.Abs(RemoteControl.Instance.SignalQuality(_cardNumber)) > layer.GetChannel(currentDetail.IdChannel).signalQuality)
+                if (quality > Math.Abs(layer.GetChannel(currentDetail.IdChannel).signalQuality))
                 {
                   // add new strong channel
-                  dbChannel.signalQuality = quality;
                   dbChannel = layer.AddNewChannel(channel.Name, channel.LogicalChannelNumber);
+                  dbChannel.signalQuality = quality;
+
+                  competativelyDisplaced = true;
                 }
                 else
                 {
                   // use existing channel
                   dbChannel = currentDetail.ReferencedChannel();
+
+                  competativelyDisplaced = false;
                 }
               }
               else // Old Default Path - take current detail
@@ -585,7 +589,7 @@ namespace SetupTv.Sections
                 exists = true;
                 dbChannel = currentDetail.ReferencedChannel();
               }
-            }           
+            }
 
             if (dbChannel.IsTv)
             {
@@ -625,26 +629,32 @@ namespace SetupTv.Sections
 
             if (channel.IsTv)
             {
-              if (exists)
+              if (!competativelyDisplaced)
               {
-                tv.updChannel++;
-              }
-              else
-              {
-                tv.newChannel++;
-                tv.newChannels.Add(channel);
+                if (exists)
+                {
+                  tv.updChannel++;
+                }
+                else
+                {
+                  tv.newChannel++;
+                  tv.newChannels.Add(channel);
+                }
               }
             }
             if (channel.IsRadio)
             {
-              if (exists)
+              if (!competativelyDisplaced)
               {
-                radio.updChannel++;
-              }
-              else
-              {
-                radio.newChannel++;
-                radio.newChannels.Add(channel);
+                if (exists)
+                {
+                  radio.updChannel++;
+                }
+                else
+                {
+                  radio.newChannel++;
+                  radio.newChannels.Add(channel);
+                }
               }
             }
             layer.MapChannelToCard(card, dbChannel, false);
@@ -743,6 +753,7 @@ namespace SetupTv.Sections
         checkBoxCreateGroups.Enabled = false;
         checkBoxCreateSignalGroup.Enabled = false;
         checkBoxEnableChannelMoveDetection.Enabled = false;
+        checkBoxEnableStrongestChannelSelection.Enabled = false;
         checkBoxAdvancedTuning.Enabled = false;
       }
       else
@@ -783,5 +794,10 @@ namespace SetupTv.Sections
     }
 
     #endregion
+
+    private void checkBoxCreateSignalGroup_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }
