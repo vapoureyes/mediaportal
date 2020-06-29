@@ -626,12 +626,12 @@ namespace SetupTv.Sections
               //update tuning details...
               TuningDetail td = layer.UpdateTuningDetails(dbChannel, channel, currentDetail);
               td.Persist();
+
+              exists = true;
             }
 
             if (channel.IsTv)
             {
-              if (!competativelyDisplaced)
-              {
                 if (exists)
                 {
                   tv.updChannel++;
@@ -641,7 +641,6 @@ namespace SetupTv.Sections
                   tv.newChannel++;
                   tv.newChannels.Add(channel);
                 }
-              }
             }
             if (channel.IsRadio)
             {
